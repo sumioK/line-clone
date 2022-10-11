@@ -6,13 +6,8 @@ import Line from './components/Line';
 
 
 function App() {
-  const user = useAuthState(auth);
-
-  return (
-    <div className="App">
-      {user ? <Line /> : <SignIn />}
-    </div>
-  );
+  const [user] = useAuthState(auth);
+  return <div className="App">{user ? <Line /> : <SignIn />}</div>;
 }
 
 export default App;
